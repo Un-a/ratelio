@@ -1,0 +1,142 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.team-section {
+  &__list {
+    @include column(12);
+    @include reset-list();
+    margin-bottom: 50px;
+
+    @media #{$tablet-landscape} {
+      @include column(5.8, 12);
+      @include post(0.2);
+    }
+  }
+
+  &__list-item {
+    font-size: 16px;
+    position: relative;
+    padding: 15px 0 15px 35px;
+    margin-bottom: 0;
+
+    @media #{$tablet-landscape} {
+      padding: 30px 0 30px 50px;
+      font-size: 22px;
+    }
+
+    @media #{$laptop} {
+      font-size: 30px;
+      padding: 50px 0 50px 65px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background-color: $gray-700;
+
+      @media #{$tablet-landscape} {
+        top: 0;
+        bottom: auto;
+      }
+    }
+
+    &:before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      top: 13px;
+      font-size: 28px;
+      line-height: 1;
+      color: $light-primary;
+
+      @media #{$tablet-landscape} {
+        font-size: 40px;
+        top: 26px;
+      }
+
+      @media #{$laptop} {
+        font-size: 52px;
+        top: 45px;
+      }
+    }
+  }
+
+  &__years {
+    @include column(12);
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 50px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/round.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      width: 380px;
+      height: 380px;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @media #{$tablet-landscape} {
+        width: 600px;
+        height: 600px;
+      }
+
+      @media #{$laptop} {
+        width: 800px;
+        height: 800px;
+      }
+    }
+
+    @media #{$tablet-landscape} {
+      @include column(5.8, 12);
+      @include push(0.2, 12);
+      order: 1;
+      padding: 80px 0;
+      margin-bottom: 90px;
+    }
+
+    @media #{$laptop} {
+      padding: 100px 0;
+      margin-bottom: 165px;
+    }
+  }
+
+  &__years-text {
+    font-family: $font-family-header;
+    font-size: 18px;
+    text-align: center;
+
+    @media #{$tablet-landscape} {
+      font-size: 29px;
+    }
+
+    @media #{$laptop} {
+      font-size: 40px;
+    }
+  }
+
+  &__years-num {
+    font-size: 54px;
+    line-height: 1;
+
+    @media #{$tablet-landscape} {
+      font-size: 86px;
+    }
+
+    @media #{$laptop} {
+      font-size: 120px;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "colors";
+@import "mixins";
+@import "typography";
+@import "breakpoints";
+
+.field {
+  position: relative;
+
+  &__input,
+  &__textarea {
+    @include transition(background-color, color);
+    color: $white;
+    font-family: $font-family-main;
+    line-height: 1;
+    background-color: $gray-900;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 19px 20px 20px;
+    min-width: 280px;
+    outline: none;
+    border: 1px solid transparent;
+
+
+    @media #{$tablet-landscape} {
+      font-size: 18px;
+      padding: 21px 25px 22px;
+    }
+
+    @media #{$laptop} {
+      font-size: 22px;
+      padding: 26px 35px 27px;
+    }
+
+    &::placeholder {
+      color: $gray-700;
+    }
+
+    &:focus {
+      color: $gray-700;
+      background-color: $white;
+      border: 1px solid transparent;
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    display: block;
+  }
+
+  &--invalid {
+    .field__input {
+        border-color: $danger;
+        padding-right: 80px;
+        color: $gray-700;
+
+        @media #{$tablet-landscape} {
+          padding-right: 95px;
+        }
+
+        @media #{$laptop} {
+          padding-right: 105px;
+        }
+
+      &:focus {
+        border-color: transparent;
+
+        ~ .field__error {
+          display: none;
+        }
+      }
+    }
+
+    .field__error {
+      display: inline-block;
+    }
+  }
+
+  &__error {
+    display: none;
+    position: absolute;
+    right: 20px;
+    font-size: 12px;
+    color: $danger;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media #{$tablet-landscape} {
+      right: 25px;
+      font-size: 14px;
+    }
+
+    @media #{$laptop} {
+      right: 35px;
+    }
+  }
+
+  &--wide {
+    width: 100%;
+
+    .field__input,
+    .field__textarea {
+      width: 100%;
+    }
+  }
+}

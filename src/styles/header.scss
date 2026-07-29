@@ -1,0 +1,64 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.header {
+  @include transition(background-color);
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: relative;
+
+  @media #{$tablet-landscape} {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  @media #{$laptop} {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  > .nav {
+    display: none;
+
+    @media #{$laptop} {
+      display: flex;
+    }
+  }
+
+  &--white {
+    background-color: $white;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-image: url("../images/header-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    width: 90%;
+    height: 250%;
+    z-index: -2;
+    right: 0;
+    top: 0;
+
+    @media #{$tablet-landscape} {
+      height: 350%;
+    }
+
+    @media #{$laptop} {
+      background-position-x: 0;
+      height: 450%;
+      width: 100%;
+    }
+
+    @media #{$laptop-wide} {
+      background-position-x: 20%;
+    }
+  }
+}

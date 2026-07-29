@@ -1,0 +1,16 @@
+@import "colors";
+@import "mixins";
+
+.logo {
+  @include transition(fill);
+  width: 97px;
+  height: 37px;
+
+  &--white {
+    fill: $white;
+  }
+
+  &--black {
+    fill: $black;
+  }
+}

@@ -1,0 +1,31 @@
+$white: #ffffff !default;
+$black: #000000 !default;
+$gray-500: #bababa !default;
+$gray-600: #606060 !default;
+$gray-700: #424141 !default;
+$gray-800: #111111 !default;
+$gray-900: #191919 !default;
+
+$transparent-bg: transparent !default;
+$dark-background: $black !default;
+$dark-white: $white !default;
+
+$primary: #8d47e6 !default;
+$secondary: #25a384 !default;
+$info: #7ac3dc !default;
+$warning: #ffd67f !default;
+$danger: #dd6176 !default;
+$danger-gradient: #ff3d7d !default;
+$primary-state: #944af2 !default;
+$secondary-state: #26c09a !default;
+$light-secondary: #51e5d2 !default;
+$light-primary: #c08eff !default;
+
+$linear-gradient-btn: linear-gradient(to right, $secondary 0%, $primary 100%);
+$linear-gradient-btn-state: linear-gradient(to right, $secondary-state 0%, $primary-state 100%);
+$linear-gradient-text-primary: linear-gradient(to right, $info 0%, $warning 50%, $danger-gradient 100%);
+$linear-gradient-text-secondary: linear-gradient(to right, $light-secondary 0%, $light-primary 100%);
+
+
+$box-shadow-btn: 0 10px 48px 3px rgba(98, 109, 190, 0.65);
+$box-shadow-btn-state-active: inset 0 5px 16px rgba(0, 0, 0, 0.35);

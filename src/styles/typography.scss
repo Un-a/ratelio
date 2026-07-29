@@ -1,0 +1,189 @@
+@import "./colors";
+@import "./breakpoints";
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/NeueMachina-Bold.woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/NeueMachina-Regular.woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+$font-family-main: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-family-header: "Neue Machina", -apple-system, BlinkMacSystemFont, Segoe UI,
+  Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+  sans-serif;
+
+h1,
+.h1 {
+  margin: 0 0 60px;
+  padding: 0;
+  color: inherit;
+  font-family: $font-family-header;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-size: 30px;
+  line-height: 1.4;
+
+  @media #{$tablet-landscape} {
+    font-size: 56px;
+  }
+
+  @media #{$laptop} {
+    font-size: 80px;
+  }
+}
+
+h2,
+.h2 {
+  margin: 0 0 35px;
+  padding: 0;
+  color: inherit;
+  font-family: $font-family-header;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-size: 26px;
+  line-height: 1.4;
+
+  @media #{$tablet-landscape} {
+    font-size: 52px;
+    margin-bottom: 80px;
+  }
+
+  @media #{$laptop} {
+    font-size: 72px;
+    margin-bottom: 115px;
+  }
+}
+
+h3,
+.h3 {
+  margin: 0 0 20px;
+  padding: 0;
+  color: inherit;
+  font-family: $font-family-header;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-size: 20px;
+  line-height: 1.4;
+
+  @media #{$tablet-landscape} {
+    font-size: 26px;
+  }
+
+  @media #{$laptop} {
+    font-size: 36px;
+    margin-bottom: 35px;
+  }
+}
+
+h4,
+.h4 {
+  margin: 0 0 25px;
+  padding: 0;
+  color: inherit;
+  font-family: $font-family-header;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-size: 20px;
+  line-height: 1.4;
+
+  @media #{$laptop} {
+    font-size: 24px;
+  }
+}
+
+p {
+  margin: 0 0 25px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  @media #{$tablet-landscape} {
+    font-size: 18px;
+  }
+
+  @media #{$laptop} {
+    font-size: 24px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.text {
+  &--middle {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @media #{$tablet-landscape} {
+      font-size: 21px;
+    }
+
+    @media #{$laptop} {
+      font-size: 30px;
+    }
+  }
+
+  &--large {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @media #{$tablet-landscape} {
+      font-size: 24px;
+    }
+
+    @media #{$laptop} {
+      font-size: 36px;
+    }
+  }
+
+  &--mute {
+    color: $gray-500;
+  }
+
+  &--daark-mute {
+    color: $gray-600;
+  }
+
+  &--normal {
+    font-weight: 400;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--gradient-primary {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: $linear-gradient-text-primary;
+    white-space: nowrap;
+  }
+
+  &--gradient-secondary {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: $linear-gradient-text-secondary;
+    white-space: nowrap;
+  }
+}
+
+.no-margin-bottom {
+  margin: 0;
+}

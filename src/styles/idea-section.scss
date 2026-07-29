@@ -1,0 +1,159 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.idea-section {
+  border-radius: 25px;
+  background-color: $white;
+  color: $black;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  @media #{$tablet-landscape} {
+    padding-top: 65px;
+    padding-bottom: 10px;
+  }
+
+  @media #{$laptop} {
+    padding-top: 100px;
+    padding-bottom: 145px;
+  }
+
+  &__list {
+    @include reset-list();
+    margin-bottom: 0;
+  }
+
+  &__item {
+    @include column(12);
+    @include prefix(1);
+    @include suffix(1);
+    margin-bottom: 20px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      width: 1px;
+      background-color: #e7e7e7;
+      display: none;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 60px;
+
+      &:after {
+        content: "or";
+        position: absolute;
+        bottom: -62px;
+        left: column(1);
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        border: 1px solid #e7e7e7;
+        border-radius: 50%;
+        background-color: $white;
+        font-family: $font-family-main;
+        font-size: 14px;
+        line-height: 32px;
+        font-weight: 700;
+        text-align: center;
+        display: block;
+      }
+    }
+
+    @media #{$tablet-landscape} {
+      @include prefix(0.5);
+      @include suffix(0.5);
+      @include column("half");
+      margin-bottom: 60px;
+
+      &:first-child {
+        @include post("half");
+      }
+
+      &:nth-child(2) {
+        &:after {
+          top: 15px;
+          bottom: auto;
+          left: auto;
+          right: 0;
+          transform: none;
+          width: 40px;
+          height: 40px;
+          font-size: 13px;
+          line-height: 40px;
+        }
+        &:before {
+          display: block;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 60px;
+      }
+    }
+
+    @media #{$laptop} {
+      @include column("thrid");
+      margin-bottom: 0;
+
+      &:first-child {
+        @include post(0);
+        margin-bottom: 0;
+
+        &:before {
+          display: block;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+
+        &:after {
+          top: 25px;
+          right: -6px;
+          width: 52px;
+          height: 52px;
+          line-height: 52px;
+          font-size: 18px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .h2 {
+      font-family: $font-family-main;
+
+      @media #{$tablet-landscape} {
+        margin-bottom: 20px;
+      }
+
+      @media #{$laptop} {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__title {
+    @include prefix(1);
+    @include suffix(1);
+
+    @media #{$tablet-landscape} {
+      @include prefix(0.5);
+      @include suffix(0.5);
+    }
+  }
+}

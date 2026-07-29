@@ -1,0 +1,228 @@
+@import "./colors";
+@import "./typography";
+@import "./mixins";
+@import "./breakpoints";
+@import "./grid";
+
+.first-screen {
+  padding-top: 85px;
+
+  @media #{$tablet-landscape} {
+    padding-top: 100px;
+  }
+
+  @media #{$laptop} {
+    padding-top: 210px;
+  }
+
+  &__heading {
+    max-width: 500px;
+
+    @media #{$tablet-landscape} {
+      max-width: none;
+      width: 80%;
+    }
+
+    @media #{$laptop} {
+      width: 70%;
+    }
+
+    @media #{$laptop-wide} {
+      width: 60%;
+    }
+  }
+
+  &__texts {
+    padding-bottom: 200px;
+    padding-top: 165px;
+    position: relative;
+
+    @media #{$tablet-landscape} {
+      padding-bottom: 120px;
+    }
+
+    @media #{$laptop} {
+      padding-bottom: 185px;
+      padding-top: 190px;
+    }
+  }
+
+  &__image-triangle.gatsby-image-wrapper {
+    position: absolute;
+    top: 26%;
+    left: 25%;
+    transform: scale(0.4);
+    width: 212px;
+    height: 194px;
+
+    @media #{$tablet-landscape} {
+      transform: scale(0.65);
+      top: 32%;
+      left: 37%;
+    }
+
+    @media #{$laptop} {
+      transform: scale(1);
+      top: 37%;
+      left: 37%;
+    }
+  }
+
+  &__image-spiral.gatsby-image-wrapper {
+    position: absolute;
+    top: 33%;
+    left: 36%;
+    transform: scale(0.4);
+    opacity: 0.8;
+    width: 191px;
+    height: 185px;
+
+    @media #{$tablet-landscape} {
+      transform: scale(0.65);
+      top: 39%;
+      left: 47%;
+    }
+
+    @media #{$laptop} {
+      transform: scale(1);
+      top: 44%;
+      left: 47%;
+    }
+  }
+
+  &__image-sphere.gatsby-image-wrapper {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    transform: scale(0.4);
+    width: 202px;
+    height: 201px;
+    opacity: 0.7;
+
+    @media #{$tablet-landscape} {
+      transform: scale(0.7);
+      top: 32%;
+      left: 34%;
+    }
+
+    @media #{$laptop} {
+      transform: scale(1);
+      top: 35%;
+      left: 37%;
+    }
+  }
+
+  &__image-cross.gatsby-image-wrapper {
+    position: absolute;
+    top: 4%;
+    left: 24%;
+    transform: scale(0.4);
+    width: 288px;
+    height: 268px;
+
+    @media #{$tablet-landscape} {
+      transform: scale(0.7);
+      top: 18%;
+      left: 37%;
+    }
+
+    @media #{$laptop} {
+      transform: scale(1);
+      top: 22.5%;
+      left: 42%;
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    &--top {
+      background-image: url("../images/bg-1.png");
+      width: 455px;
+      height: 493px;
+      right: 0;
+      top: 0;
+      transform: translate(30%, -30%);
+
+      @media #{$tablet-landscape} {
+        width: 755px;
+        height: 810px;
+        transform: translate(45%, -25%);
+      }
+
+      @media #{$laptop} {
+        width: 1052px;
+        height: 1136px;
+        transform: translate(20%, -35%);
+      }
+    }
+
+    &--bottom {
+      background-image: url("../images/bg-2.png");
+      width: 491px;
+      height: 510px;
+      left: 0;
+      bottom: 0;
+      transform: translate(-15%, 50%);
+
+      @media #{$tablet-landscape} {
+        width: 907px;
+        height: 845px;
+        transform: translate(-25%, 45%);
+      }
+
+      @media #{$laptop} {
+        width: 1263px;
+        height: 1177px;
+        transform: translate(-23%, 40%);
+      }
+
+      @media #{$laptop-wide} {
+        transform: translate(-18%, 40%);
+      }
+    }
+  }
+
+  &__text-block {
+    max-width: 500px;
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+
+    @media #{$tablet-landscape} {
+      @include column("half");
+
+      &:first-child {
+        @include suffix(0.5);
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        @include push("half");
+        transform: translateY(-50px);
+      }
+    }
+
+    @media #{$laptop} {
+      &:last-child {
+        transform: translateY(-70px);
+      }
+    }
+  }
+
+  .text--middle {
+    margin-bottom: 35px;
+
+    @media #{$tablet-landscape} {
+      margin-bottom: 40px;
+    }
+
+    @media #{$laptop} {
+      margin-bottom: 95px;
+    }
+  }
+}

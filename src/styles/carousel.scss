@@ -1,0 +1,21 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.rec {
+  .rec-dot {
+    @include transition(width, height, background-color);
+    width: 6px;
+    height: 6px;
+    background-color: $gray-700;
+  }
+  .rec-dot_active {
+    width: 8px;
+    height: 8px;
+    background-color: $info;
+    border: none;
+    box-shadow: none;
+  }
+}

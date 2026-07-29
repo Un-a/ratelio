@@ -1,0 +1,90 @@
+@import "colors";
+@import "mixins";
+@import "typography";
+@import "breakpoints";
+
+.button {
+  @include transition(box-shadow, background-image);
+  @include reset-button();
+  @include reset-link();
+  text-align: center;
+  color: $white;
+  line-height: 1;
+  white-space: nowrap;
+
+  &--primary {
+    font-size: 18px;
+    padding: 18px 40px 20px;
+    font-family: $font-family-header;
+    font-weight: 700;
+    border-radius: 10px;
+    background-image: $linear-gradient-btn;
+    min-width: 280px;
+
+    @media #{$tablet-landscape} {
+      padding: 23px 45px 24px;
+      min-width: 300px;
+    }
+
+    @media #{$laptop} {
+      font-size: 24px;
+      padding: 27px 50px 29px;
+      min-width: 250px;
+    }
+
+    &:hover {
+      box-shadow: $box-shadow-btn;
+      background-image: $linear-gradient-btn-state;
+    }
+
+    &:active {
+      box-shadow: $box-shadow-btn-state-active;
+      background-image: $linear-gradient-btn;
+    }
+  }
+
+  &--secondary {
+    font-family: $font-family-main;
+    font-size: 20px;
+    font-weight: 400;
+    min-width: 180px;
+    padding: 18px 40px 20px;
+    border-radius: 5px;
+    background: $black;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      background: $linear-gradient-btn;
+      border-radius: 5px;
+      z-index: -1;
+    }
+
+    &:hover {
+      box-shadow: 0 5px 24px 1px rgba(98, 109, 190, 0.65);
+      background-image: $linear-gradient-btn-state;
+
+      &:before {
+        background: transparent;
+      }
+    }
+
+    &:active {
+      box-shadow: $box-shadow-btn-state-active;
+      background-image: $linear-gradient-btn;
+
+      &:before {
+        background: transparent;
+      }
+    }
+  }
+
+  &--wide {
+    width: 100%;
+  }
+}

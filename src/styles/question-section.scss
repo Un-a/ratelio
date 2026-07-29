@@ -1,0 +1,76 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.question-section {
+  padding-top: 45px;
+  padding-bottom: 35px;
+
+  @media #{$tablet-landscape} {
+    padding-top: 50px;
+    padding-bottom: 95px;
+  }
+
+  @media #{$laptop} {
+    padding-top: 85px;
+    padding-bottom: 200px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @media #{$tablet-landscape} {
+      margin-bottom: 30px;
+    }
+
+    @media #{$laptop} {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 0;
+    margin-top: 30px;
+
+    @media #{$tablet-landscape} {
+      margin-top: 45px;
+    }
+
+    @media #{$laptop} {
+      @include column("half");
+      margin-top: 65px;
+    }
+  }
+  &__form-item {
+    @include column(12);
+    margin-bottom: 10px;
+
+    @media #{$tablet-landscape} {
+      margin-bottom: 20px;
+    }
+
+    &--short {
+      @media #{$tablet-landscape} {
+        @include column(5.8, 12);
+
+        &:nth-child(odd) {
+          @include post(0.2, 12);
+        }
+
+        &:nth-child(even) {
+          @include push(0.2, 12);
+        }
+      }
+    }
+
+    &--checkbox {
+      margin: 15px 0 25px;
+
+      @media #{$tablet-landscape} {
+        margin: 30px 0 40px;
+      }
+    }
+  }
+}

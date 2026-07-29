@@ -1,0 +1,105 @@
+@import "./colors";
+@import "./typography";
+@import "./breakpoints";
+@import "./grid";
+@import "./mixins";
+
+.how-we-work-section {
+  padding-top: 35px;
+  padding-bottom: 40px;
+
+  @media #{$tablet-landscape} {
+    padding-top: 65px;
+    padding-bottom: 45px;
+  }
+
+  @media #{$laptop} {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  &__list {
+    counter-reset: item;
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 15px;
+
+    @media #{$tablet-landscape} {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-item {
+    @include column(12);
+    position: relative;
+    list-style: none;
+    padding-left: 34px;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    @media #{$tablet-landscape} {
+      @include column(5.8, 12);
+      @include suffix(1);
+      margin-bottom: 60px;
+      padding-left: 50px;
+      font-size: 18px;
+
+      &:nth-child(even) {
+        @include push(0);
+      }
+
+      &:nth-child(odd) {
+        @include post(0.2, 12);
+      }
+
+      &:nth-child(even) {
+        @include push(0.2, 12);
+      }
+    }
+
+    @media #{$laptop} {
+      @include column(3.8, 12);
+      @include suffix(0);
+      margin-bottom: 80px;
+
+      &:nth-child(even),
+      &:nth-child(odd) {
+        @include push(0);
+        @include post(0);
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        @include post(0.3, 12);
+      }
+
+      &:nth-child(2n+4) {
+        @include push(4.1);
+        @include post(0.3, 12);
+      }
+    }
+
+    &:before {
+      content: counter(item, decimal-leading-zero) " ";
+      counter-increment: item;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      color: $gray-600;
+      font-family: $font-family-header;
+      font-size: 18px;
+      line-height: 1;
+
+      @media #{$tablet-landscape} {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__btn {
+    @media #{$laptop} {
+      @include push(4.1);
+      padding-left: 50px;
+    }
+  }
+}
