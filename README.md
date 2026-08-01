@@ -10,16 +10,16 @@ Live demo: https://un-a.github.io/ratelio/
 
 This project was built with **Node 16** (Gatsby 4). Using nvm is recommended:
 
-\`\`\`bash
+```bash
 nvm use 16.20.2
 yarn install
-\`\`\`
+```
 
 Start the development server:
 
-\`\`\`bash
+```bash
 yarn develop
-\`\`\`
+```
 
 Your site will be running at `http://localhost:8000`.
 
@@ -27,17 +27,17 @@ You'll also have access to `http://localhost:8000/___graphql` — a tool for exp
 
 ## 📦 Build
 
-\`\`\`bash
+```bash
 yarn build
-\`\`\`
+```
 
 The static output will be generated in the `public` folder.
 
 ## 🌐 Deploy to GitHub Pages
 
-\`\`\`bash
+```bash
 yarn deploy
-\`\`\`
+```
 
 ## 🧐 Project structure
 
